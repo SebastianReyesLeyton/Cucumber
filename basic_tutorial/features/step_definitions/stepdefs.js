@@ -16,6 +16,10 @@ Given('today is Friday', function () {
     this.today = 'Friday';
 });
 
+Given('today is parametrized {string}', function (givenDay) {
+    this.today = givenDay;
+})
+
 When('I ask whether it\'s Friday yet', function () {
     // Write code here that turns the phrase above into concrete actions
     this.actualAnswer = isItFriday(this.today);
