@@ -7,4 +7,4 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Avaliable bash terminal
-SHELL [ "bash" ]
+SHELL [ "/bin/bash", "-c" ]
