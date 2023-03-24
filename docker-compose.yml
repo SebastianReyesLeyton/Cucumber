@@ -1,0 +1,12 @@
+# The docker-compose version
+version: '3'
+
+# Define node service
+services:
+
+  # Basic tutorial
+  cucumber_test:
+    container_name: cucumber-test
+    build: ./basic_tutorial
+    volumes:
+      - ./basic_tutorial:/usr/src/app
