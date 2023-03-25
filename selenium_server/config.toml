@@ -1,0 +1,9 @@
+[node]
+detect-drivers = false
+max-sessions = 1
+
+[[node.driver-configuration]]
+display-name = "chrome"
+stereotype = "{\"browserName\": \"chrome\", \"browserVersion\": \"111\", \"platformName\": \"Linux\", \"goog:chromeOptions\": {\"args\": [\"--remote-allow-origins=*\", \"--headless\", \"--no-sandbox\"]}}"
+webdriver-executable = '/usr/bin/chromedriver'
+max-sessions = 1

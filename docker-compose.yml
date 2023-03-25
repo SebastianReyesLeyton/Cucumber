@@ -7,7 +7,40 @@ services:
   # Basic tutorial
   cucumber_test:
     container_name: cucumber-test
-    image: basic_tutorial
+    image: cucumber_basic_tutorial
     build: ./basic_tutorial
     volumes:
       - ./basic_tutorial:/usr/src/app
+
+  # Selenium server
+  selenium_server_manual:
+    container_name: selenium_standalone_manual
+    image: selenium_server_manual
+    build: 
+      context: ./selenium_server
+      args:
+        - CUCUMBER_JSRL_CHROMEDRIVER_VERSION=111.0.5563.64
+        - CUCUMBER_JSRL_CHROMEDRIVER_FILE=chromedriver_linux64.zip
+        - CUCUMBER_JSRL_SELENIUM_SERVER_VERSION=selenium-4.8.0
+        - CUCUMBER_JSRL_SELENIUM_SERVER_FILE=selenium-server-4.8.2.jar
+        - CUCUMBER_JSRL_SELENIUM_HTTP_JDK_CLIENT_VERSION=4.8.2
+        - CUCUMBER_JSRL_SELENIUM_HTTP_JDK_CLIENT_FILE=selenium-http-jdk-client-4.8.2.jar
+    ports:
+      - 4444:4444
+      - 7900:7900
+
+  # Selenium standalone docker
+  selenium_standalone:
+    container_name: selenium_standalone
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444
+      - 7900:7900
+
+  # Basic selenium exercise
+  cucumber_selenium:
+    container_name: cucumber_selenium
+    image: cucumber_selenium_tutorial
+    build: ./selenium_tutorial
+    volumes:
+      - ./selenium_tutorial:/usr/src/app
