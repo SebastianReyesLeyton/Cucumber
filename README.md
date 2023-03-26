@@ -33,3 +33,17 @@ bash commands.sh build
 1. https://docs.npmjs.com/updating-packages-downloaded-from-the-registry
 2. https://stackoverflow.com/questions/46961026/cucumber-js-how-to-run-the-features-windows
 3. https://www.freecodecamp.org/news/git-delete-remote-branch/#:~:text=To%20completely%20remove%20a%20remote,origin%20%2Dd%20branch%2Dname%20.
+4. https://www.selenium.dev/documentation/grid/configuration/toml_options/
+5. https://www.selenium.dev/documentation/grid/components/
+6. https://www.selenium.dev/documentation/grid/getting_started/
+7. https://www.selenium.dev/documentation/grid/configuration/help/
+8. https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-http-jdk-client/4.8.2/
+9. https://stackoverflow.com/questions/53073411/selenium-webdriverexceptionchrome-failed-to-start-crashed-as-google-chrome-is
+10. https://tecadmin.net/setup-selenium-chromedriver-on-ubuntu/
+11. https://linuxgenie.net/how-to-install-google-chrome-on-ubuntu-22-04/
+12. https://chromedriver.storage.googleapis.com/index.html
+13. https://www.selenium.dev/documentation/grid/configuration/cli_options/#sample-that-retrieves-the-downloaded-file
+14. https://iq.direct/blog/49-how-to-unzip-file-on-ubuntu-linux.html
+15. https://adamtheautomator.com/install-google-chrome-for-ubuntu/
+16. https://github.com/SeleniumHQ/docker-selenium/tree/trunk/Standalone
+17. https://hub.docker.com/r/selenium/standalone-chrome/tags

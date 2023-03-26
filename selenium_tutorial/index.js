@@ -6,9 +6,15 @@ const chromeOptions = Options.chrome();
 (
   async function googleSearch() {
 
+    const args = [ 
+      "--start-maximized", 
+      "--no-sandbox"
+    ]
+
     const driver = new Builder()
                             .forBrowser(Browser.CHROME)
-                            .usingServer('http://selenium_standalone_manual:4444/wd/hub')
+                            .setChromeOptions(chromeOptions.set('goog:chromeOptions', { args }))
+                            .usingServer('http://selenium_server:4444/wd/hub')
                             .build();
 
     try {

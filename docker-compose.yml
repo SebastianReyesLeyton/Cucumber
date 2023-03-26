@@ -13,9 +13,10 @@ services:
       - ./basic_tutorial:/usr/src/app
 
   # Selenium server
-  selenium_server_manual:
-    container_name: selenium_standalone_manual
-    image: selenium_server_manual
+  selenium_server:
+    container_name: selenium_server
+    image: selenium_server
+    shm_size: 2gb
     build: 
       context: ./selenium_server
       args:
@@ -25,17 +26,20 @@ services:
         - CUCUMBER_JSRL_SELENIUM_SERVER_FILE=selenium-server-4.8.2.jar
         - CUCUMBER_JSRL_SELENIUM_HTTP_JDK_CLIENT_VERSION=4.8.2
         - CUCUMBER_JSRL_SELENIUM_HTTP_JDK_CLIENT_FILE=selenium-http-jdk-client-4.8.2.jar
+        - CUCUMBER_JSRL_NO_VNC_VERSION=1.4.0
+        - CUCUMBER_JSRL_WEBSOCKIFY_VERSION=0.11.0
     ports:
       - 4444:4444
       - 7900:7900
+      - 5900:5900
 
-  # Selenium standalone docker
-  selenium_standalone:
-    container_name: selenium_standalone
-    image: selenium/standalone-chrome
-    ports:
-      - 4444:4444
-      - 7900:7900
+  # Selenium standalone docker (Optional)
+  # selenium_standalone:
+  #   container_name: selenium_standalone
+  #   image: selenium/standalone-chrome
+  #   ports:
+  #     - 4444:4444
+  #     - 7900:7900
 
   # Basic selenium exercise
   cucumber_selenium:
