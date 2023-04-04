@@ -78,7 +78,8 @@ ENV DISPLAY_NUM 99
 # Install VNC dependencies
 RUN apt -y install fluxbox \
                    xvfb \
-                   x11vnc 
+                   x11vnc \
+                   dos2unix  
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 
@@ -119,6 +120,7 @@ ENV START_NO_VNC=true
 
 # Copy docker entrypoint file to selenium workspace
 COPY entrypoint.sh .
+RUN dos2unix entrypoint.sh
 
 
 # Avaliable bash terminal
